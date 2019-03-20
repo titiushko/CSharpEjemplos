@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Basico2Test.cs" />
     <Compile Include="Basico1Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,6 +58,26 @@
     <ProjectReference Include="..\Ejemplos.Basico1\Ejemplos.Basico1.csproj">
       <Project>{E71EA866-E9C1-4AA8-BC3A-EE40D339A496}</Project>
       <Name>Ejemplos.Basico1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ejemplos.Basico2\Ejemplos.Basico2.csproj">
+      <Project>{C4B43FB8-FECD-49F0-824E-B046D84827B2}</Project>
+      <Name>Ejemplos.Basico2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ejemplos.Basico3\Ejemplos.Basico3.csproj">
+      <Project>{4eadc1e5-6a4b-49d3-a73b-181490d26049}</Project>
+      <Name>Ejemplos.Basico3</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ejemplos.Basico4\Ejemplos.Basico4.csproj">
+      <Project>{6b9e9513-222b-438b-af85-5be24ab7f60e}</Project>
+      <Name>Ejemplos.Basico4</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ejemplos.Basico5\Ejemplos.Basico5.csproj">
+      <Project>{7cb4d506-d520-4ece-a5ee-3195e3b2b3d6}</Project>
+      <Name>Ejemplos.Basico5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ejemplos.Basico6\Ejemplos.Basico6.csproj">
+      <Project>{fa866234-abe5-44eb-be24-72ed36b099d7}</Project>
+      <Name>Ejemplos.Basico6</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
