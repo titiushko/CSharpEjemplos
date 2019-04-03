@@ -23,6 +23,7 @@ namespace Ejemplos.Intermedio1
             string vTemplateFile = File.ReadAllText(vPath + "template.sql"); // Leer el archivo con la plantilla SQL
             string vResultFile = string.Empty; // SQL resultado con el listado de parámetros
             string vConstantsFile = string.Empty;
+            string vFinalFile = "PARAMETER,SOURCE,DEFAULT_VALUE,UDCID\n";
             int vIndex = 0;
 
             foreach (string vParam in ConvertCamelCaseToSnakeCase(vParams)) // Recorrer el listado de parámetros
@@ -36,11 +37,19 @@ namespace Ejemplos.Intermedio1
                     vResultFile += vTemplateFile.Replace(":PARAMETER:", vParamRow[0]). // Reemplazar el nombre del parámetro en la plantilla y concatenar al resultado
                                    Replace(":PARAMETER_VALUE:", vParamValue); // Reemplazar el valor predeterminado del parámetro en la plantilla y concatenar al resultado
                     vConstantsFile += string.Format(UDC_CONSTANT_FORMAT, GetRow(vParams[vIndex])[0], vParamRow[0]);
+                    vFinalFile += string.Format(
+                        "{0},{1},{2},{3}\n",
+                        GetRow(vParams[vIndex])[0], // PARAMETER
+                        vParamRow[1].Equals(DYNAMIC_PARAM) ? "XMLPARAMETER" : "UDC", // SOURCE
+                        vParamValue, // DEFAULT_VALUE
+                        vParamRow[0] // UDCID
+                    );
                 }
                 vIndex++;
             }
             File.WriteAllText(vPath + "result.sql", vResultFile); // Guardar el SQL resultado
-            File.WriteAllText(vPath + "consts.cs", vConstantsFile);
+            File.WriteAllText(vPath + "consts.txt", vConstantsFile);
+            File.WriteAllText(vPath + "parameters.csv", vFinalFile);
         }
 
         /// <summary>

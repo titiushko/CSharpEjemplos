@@ -43,15 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="consts.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="parameters.csv" />
     <None Include="params.csv" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="consts.txt" />
     <Content Include="params.txt" />
     <Content Include="result.sql" />
     <Content Include="template.sql" />
